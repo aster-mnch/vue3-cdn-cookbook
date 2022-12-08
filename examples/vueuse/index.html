@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>VueUse - Vue3 CDN Cookbook</title>
+</head>
+<body>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.2/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.prod.js",
+        "@vueuse/core": "https://cdn.jsdelivr.net/npm/@vueuse/core@9.6/index.min.mjs",
+        "@vueuse/shared": "https://cdn.jsdelivr.net/npm/@vueuse/shared@9.6/index.min.mjs",
+        "vue-demi": "https://cdn.jsdelivr.net/npm/vue-demi@0.13.11/lib/index.min.mjs"
+      }
+    }
+  </script>
+
+  <div id="app"></div>
+
+  <script type="module">
+    import { createApp, ref } from 'vue';
+    import App from './app.js';
+
+    createApp(App).mount('#app');
+  </script>
+</body>
+</html>
