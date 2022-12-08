@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@3.0/dist/vuetify.min.css" rel="stylesheet">
+  <title>Vuetify - Vue3 CDN Cookbook</title>
+</head>
+<body>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.2/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.prod.js",
+        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.0/dist/vuetify.esm.min.js"
+      }
+    }
+  </script>
+
+  <div id="app"></div>
+
+  <script type="module">
+    import { createApp, ref } from 'vue';
+    import { createVuetify } from 'vuetify';
+    import App from './app.js';
+
+    const vuetify = createVuetify();
+    const app = createApp(App);
+    app.use(vuetify);
+    app.mount('#app');
+  </script>
+</body>
+</html>
