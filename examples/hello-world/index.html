@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Vue3 CDN Cookbook</title>
+</head>
+<body>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.2/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.prod.js"
+      }
+    }
+  </script>
+
+  <div id="app">
+    Hello, {{ name }}!
+  </div>
+
+  <script type="module">
+    import { createApp } from 'vue';
+
+    createApp({
+      data() {
+        return {
+          name: 'world',
+        };
+      },
+    }).mount('#app');
+  </script>
+</body>
+</html>
